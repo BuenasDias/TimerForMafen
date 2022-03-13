@@ -22,12 +22,8 @@ class MainActivityVIewModel : ViewModel() {
     val timerOriginal = 10000L
 
     private val _timerCurrent: MutableLiveData<Long> = MutableLiveData(10000L)
-    var timerCurrent: LiveData<Long> = _timerCurrent
-
 
     fun createTimer() {
-
-        Log.d("TAG", "createTimer: true")
 
         _isTimer.postValue(true)
         _isPause.postValue(false)
@@ -45,7 +41,7 @@ class MainActivityVIewModel : ViewModel() {
         }.start()
     }
 
-    fun pauseTimer(){
+    fun pauseTimer() {
         timer?.cancel()
         _isPause.postValue(true)
         _timerCurrent.postValue(_seconds.value!! * 1000)
@@ -57,5 +53,4 @@ class MainActivityVIewModel : ViewModel() {
         _isPause.postValue(true)
         _seconds.postValue(0L)
     }
-
 }
