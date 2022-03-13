@@ -48,7 +48,7 @@ class MainActivityVIewModel : ViewModel() {
     fun pauseTimer(){
         timer?.cancel()
         _isPause.postValue(true)
-        _timerCurrent.postValue(_seconds.value!!)
+        _timerCurrent.postValue(_seconds.value!! * 1000)
     }
 
     fun stopTimer() {
