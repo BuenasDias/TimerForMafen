@@ -1,4 +1,4 @@
-package com.max.interview.timerformafen
+package com.max.interview.timerformafen.screens.main
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity

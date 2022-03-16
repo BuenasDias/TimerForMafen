@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TimerForMafen">
         <activity
-            android:name=".MainActivity"
+            android:name=".screens.main.MainActivity"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".screens.second.SecondActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -1,4 +1,4 @@
-package com.max.interview.timerformafen
+package com.max.interview.timerformafen.screens.main
 
 import android.os.CountDownTimer
 import android.util.Log
@@ -11,13 +11,13 @@ class MainActivityVIewModel : ViewModel() {
     private var timer: CountDownTimer? = null
 
     private val _seconds: MutableLiveData<Long> = MutableLiveData(0)
-    var second: LiveData<Long> = _seconds
+    val second: LiveData<Long> = _seconds
 
     private val _isTimer: MutableLiveData<Boolean> = MutableLiveData(false)
-    var isTimer: LiveData<Boolean> = _isTimer
+    val isTimer: LiveData<Boolean> = _isTimer
 
     private val _isPause: MutableLiveData<Boolean> = MutableLiveData(true)
-    var isPause: LiveData<Boolean> = _isPause
+    val isPause: LiveData<Boolean> = _isPause
 
     val timerOriginal = 10000L
 
@@ -49,6 +49,7 @@ class MainActivityVIewModel : ViewModel() {
 
     fun stopTimer() {
         timer?.cancel()
+        _timerCurrent.postValue(timerOriginal)
         _isTimer.postValue(false)
         _isPause.postValue(true)
         _seconds.postValue(0L)
